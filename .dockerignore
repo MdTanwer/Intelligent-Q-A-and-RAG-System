@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+.env
+*.db
+*.sqlite3
+*.sqlite
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Logs
+*.log
+
+# Local development files
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Memory and cache
+memory/*
+!memory/.gitkeep
+
+# Data files (should be mounted as volumes)
+data/*
+!data/.gitkeep

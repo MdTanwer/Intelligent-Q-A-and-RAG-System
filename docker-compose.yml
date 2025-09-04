@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  agentgraph:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      - OPEN_AI_API_KEY=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
+      - TAVILY_API_KEY=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
+      - LANGCHAIN_API_KEY=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
+    volumes:
+      # Mount data directory to persist databases and vector stores
+      - ./data:/app/data
+      # Mount memory directory to persist chat history
+      - ./memory:/app/memory
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:7860/')",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
